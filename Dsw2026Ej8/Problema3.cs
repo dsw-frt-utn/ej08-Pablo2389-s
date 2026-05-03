@@ -11,8 +11,28 @@ namespace Dsw2026Ej8
             int valorCopi= originalValue;
             valorCopi++;
             Product productoCopiado = product;
+            productoCopiado.ModificarDescripcion("Modificado");
+            return $"{originalValue}-{valorCopi}-{product.Descripcion}";
 
+        }
 
+        public class  Product
+        {
+            public string _descripcion;
+            public string Descripcion
+            {
+                get { return _descripcion; }
+                private set {_descripcion = value;}
+            }
+            public Product (string descripcion) 
+            {
+               Descripcion = descripcion;
+            }
+
+            public void ModificarDescripcion(string nuevaDescripcion)
+            {
+                Descripcion = nuevaDescripcion;
+            }
         }
     }
 }
